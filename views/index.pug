@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+html(lang="vi")
+    head
+        title Gửi mail sử dụng Nodejs
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
+    body 
+        div.container 
+            div.row 
+                div.col-md-12
+                    div.card(style="margin-top: 5%")
+                        h1.card-header Gửi mail sử dụng NodeJS 
+                        div.content(style="padding: 2%")
+                            //- Gọi mixin alert khi nhận được biến msg từ route
+                            if (msg) 
+                                +alert(type, msg)
+                             
+                            form(method="POST" action="/thanhvien/guimail" enctype="multipart/form-data")
+                                div.form-group
+                                    label(for="sendTo") Người cần gửi
+                                    input.form-control(type="email" require=true placeholder="xxx@gmail.com" name="to")
+                                div.form-group
+                                    label(for="subject") Tiêu đề
+                                    input.form-control(type="text" require=true placeholder="Freetuts.net" name="subject")
+                                div.form-group
+                                    label(for="content") Nội dung
+                                    textarea.form-control(rows="5" placeholder="Nội dung" name="text")
+                                div.form-group
+                                    label(for="content") Attachments
+                                    input.form-control(name="fileSend" type="file" multiple)
+                                button(class=['btn', 'btn-primary', 'btn-block']) Gửi mail

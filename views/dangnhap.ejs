@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="/style.css">
+  <title>Login</title>
+</head>
+
+<body>
+
+  <section class="vh-100" style="background-color: white;">
+    <div class="container py-5 h-100">
+      <% if(mess.length> 0) { %>
+        <div class="alert alert-success" id="hide-mess">
+          <%= mess %>
+        </div>
+        <% } %>
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+              <div class="card shadow-2-strong" style="border-radius: 1rem; padding: 35px;">
+                <div class="mb-3"></div>
+                <h3 class="mb-2">Login</h3>
+                <p class="mb-5" style="color:rgb(88, 80, 80)"> See your growth and get consulting support!</p>
+                <button class="btn-lg btn-block btn-black"
+                  style="background-color: white; border-radius:20px;border:1px solid rgb(181, 202, 199);"
+                  type="submit">
+                  <h6 style="padding-top: 5px;"><i style="color: blue; padding-right:20px;"
+                      class="fab fa-google left"></i>Sign in with google</h6>
+                </button>
+                <br>
+                <div class="row">
+                  <div class="col-3">
+                    <hr role="none">
+                  </div>
+                  <div class="col-6" style="color:rgb(181, 202, 199)">
+                    <p> or Sign in with Email </p>
+                  </div>
+                  <div class="col-3">
+                    <hr role="none">
+                  </div>
+                </div>
+                <!-- Checkbox -->
+                <form action="/thanhvien/dangnhap" method="post">
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="typeEmailX-2">Email*</label>
+                    <input type="email" id="typeEmailX-2" class="form-control form-control-lg" name="username"
+                      style="border-radius:20px" id="un" required />
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="typePasswordX-2">Password*</label>
+                    <input type="password" id="typePasswordX-2" class="form-control form-control-lg" name="password"
+                      pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" style="border-radius:20px" id="pass" required />
+                    <div>
+                      <div class="form-check d-flex justify-content-start mb-4">
+                        <div style="text-align:left;padding-right: 30%">
+                          <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
+                          <h6 class="form-check-label" for="form1Example3" style="text-align:center"> Remember me </h6>
+                        </div>
+
+                        <div style="text-align:right">
+                          <a href="/thanhvien/quenmk" style="color:blue">
+                            <h6>Forget password?</h6>
+                          </a>
+                        </div>
+                      </div>
+                      <br>
+                      <button type="submit" value="Insert" class="btn btn-primary btn-lg btn-block color:#0500FF"
+                        type="submit" style="border-radius:20px;background-color:blue">Login</button>
+                      <br>
+                      <div>
+                        <h6>Not registered yet? <a href="dangky" style="color:blue">Create an Account</a></h6>
+                      </div>
+
+                </form>
+                <a href="/thanhvien/guimail">send</a>
+                <br>
+              </div>
+            </div>
+          </div>
+    </div>
+    </div>
+  </section>
+  <script>
+    $(function () {
+      setTimeout(function () { $("#hide-mess").fadeOut(1500); }, 3000)
+    })
+  </script>
+</body>
+
+</html>
